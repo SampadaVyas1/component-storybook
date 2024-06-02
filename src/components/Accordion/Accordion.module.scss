@@ -1,0 +1,41 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.container {
+  padding: toRem(10);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  .title {
+    display: flex;
+    gap: toRem(10);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .upIcon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.content {
+  padding: toRem(10) 0 toRem(10) toRem(10);
+}
+
+.disabledAccordion {
+  background-color: $grey-100;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.hideContent {
+  display: none;
+}

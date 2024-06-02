@@ -1,0 +1,22 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+$hover-navbar: #2196f3;
+
+.sideNavbarItemContainer {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $grey-50;
+  }
+}
+
+.sideNavbarItemContainerSelected {
+  background-color: $blue-100;
+  color: $blue-500;
+}
+
+.disabledItem {
+  color: $grey-400;
+  pointer-events: none;
+}

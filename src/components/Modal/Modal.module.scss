@@ -1,0 +1,62 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.modalContainer {
+  @include position(fixed, 0, 0, 0, 0);
+  margin: auto;
+  border-radius: toRem(4);
+  border: none;
+  box-shadow: 0px 4px 8px 0px rgba(137, 140, 145, 0.2);
+
+  &[open] {
+    @include displayFlex(null, null, null);
+  }
+
+  &::backdrop {
+    pointer-events: none;
+  }
+
+  .backdrop {
+    @include position(fixed, 0, 0, 0, 0);
+    cursor: pointer;
+    background-color: $blue-900;
+    opacity: 0.3;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 225ms;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    &.disableBackdrop {
+      cursor: default;
+    }
+  }
+
+  .mainContainer {
+    @include displayFlex(column, null, null);
+    background-color: $white;
+    overflow: hidden;
+    row-gap: toRem(24);
+    position: relative;
+    padding: toRem(16) 0;
+    width: 100%;
+  }
+
+  .headerWrapper {
+    @include displayFlex(null, null, flex-start);
+    column-gap: toRem(16);
+    padding: 0 toRem(16);
+
+    .closeModalButton {
+      @include displayFlex();
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+
+  .bodyWrapper {
+    @include displayFlex(column, null, null);
+    flex: 1;
+    row-gap: toRem(24);
+    padding: 0 toRem(16);
+    overflow: hidden;
+  }
+}

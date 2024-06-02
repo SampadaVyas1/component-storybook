@@ -1,0 +1,19 @@
+@import '../../styles/mixins';
+
+.paragraph {
+  &.light {
+    font-family: Roboto-Light;
+  }
+  &.regular {
+    font-family: Roboto-Regular;
+  }
+  &.medium {
+    font-family: Roboto-Medium;
+  }
+  &.bold {
+    font-family: Roboto-Bold;
+  }
+  // &.extraBold {
+  //     font-family: Roboto-ExtraBold;
+  // }
+}

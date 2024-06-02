@@ -1,0 +1,20 @@
+@import '../../styles/mixins';
+@import '../../styles/constants';
+
+.heading {
+  &.heading1 {
+    @include typography($fontFamilyMontSerratBold, 700, 64px, 120%, 0.5px);
+  }
+  &.heading2 {
+    @include typography($fontFamilyMontSerratBold, 700, 56px, 120%, 0.5px);
+  }
+  &.heading3 {
+    @include typography($fontFamilyMontSerratBold, 700, 48px, 120%, 0.5px);
+  }
+  &.heading4 {
+    @include typography($fontFamilyMontSerratBold, 700, 32px, 120%, 0.5px);
+  }
+  &.heading5 {
+    @include typography($fontFamilyMontSerratBold, 700, 12px, 120%, 0.5px);
+  }
+}

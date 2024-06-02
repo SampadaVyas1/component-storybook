@@ -1,0 +1,28 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.menuItem {
+  width: auto;
+  padding: toRem(10);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 2px solid $grey-100;
+  text-wrap: nowrap;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    background-color: $blue-200;
+  }
+}
+
+.disabled {
+  color: $grey-600;
+}
+
+// Below styles are for storybook
+.menuItemClassName {
+  width: toRem(150);
+}

@@ -1,0 +1,142 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+@import 'src/styles/typography';
+
+.fileUploadContainer {
+  display: flex;
+  padding: toRem(16) toRem(24);
+  flex-direction: column;
+  align-items: center;
+  row-gap: toRem(12);
+  column-gap: toRem(12);
+  align-self: stretch;
+  border-radius: toRem(8);
+  border: 1px solid $grey-50;
+  background: $white;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: toRem(8);
+    border: 1px solid $blue-250;
+    background: $blue-10;
+  }
+
+  .iconWrapper {
+    border-radius: toRem(28);
+    border: toRem(4) solid $blue-50;
+    background: $blue-150;
+    padding: toRem(10);
+    display: flex;
+  }
+
+  .iconWrapperDisabled {
+    border-radius: toRem(28);
+    border: toRem(4) solid $grey-50;
+    background: $grey-150;
+  }
+}
+
+.disabledContainer {
+  pointer-events: none;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: toRem(16);
+  border-radius: toRem(8);
+  border: 1px solid $blue-grey-350;
+  background: $white;
+  padding: toRem(16);
+  margin: toRem(8) 0;
+
+  .startIcon {
+    border-radius: toRem(28);
+    padding: toRem(10);
+    display: flex;
+    border: toRem(4) solid $blue-50;
+    background: $blue-150;
+    align-self: flex-start;
+  }
+
+  .startIconWithError {
+    border: toRem(4) solid $red-50;
+    background: $red-120;
+  }
+
+  .errorFileInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+
+    .title {
+      color: $red-550;
+    }
+
+    .subTitle {
+      color: $red;
+    }
+
+    .tryAgainButton {
+      width: fit-content;
+      padding: 0;
+      color: $red;
+
+      &:hover {
+        color: $red;
+        background-color: transparent;
+      }
+    }
+  }
+  .defaultFileInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .subTitle {
+      color: $blue-grey-850;
+    }
+  }
+}
+
+.errorProgressContainer {
+  border-radius: toRem(8);
+  border: 1px solid $red-150;
+  background: $red-250;
+}
+
+.postUploadSection {
+  display: flex;
+  column-gap: toRem(12);
+  align-items: center;
+  border-radius: toRem(4);
+  border: 1px solid $grey-250;
+  background: $white;
+  padding: toRem(12);
+  margin: toRem(8) 0;
+
+  .fileLink {
+    margin-right: auto;
+    color: $blue-650;
+  }
+}
+
+//Below styles are for storybook
+.customFileUpload {
+  border-radius: 0;
+  border: 2px dashed $green-300;
+
+  &:hover {
+    border-radius: 0;
+    border: 2px dashed $green;
+    background: $green-100;
+  }
+
+  .iconWrapper {
+    border-radius: toRem(4);
+    border: toRem(4) solid $green-100;
+    background: $green-200;
+    padding: toRem(10);
+    display: flex;
+  }
+}

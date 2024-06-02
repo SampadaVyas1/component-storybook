@@ -1,0 +1,136 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.alertContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  padding: toRem(16) toRem(16) 0 toRem(16);
+  max-width: toRem(328);
+  border-radius: toRem(4);
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+.fixedLayout {
+  position: fixed;
+
+  &.topLeft {
+    top: toRem(16);
+    left: toRem(16);
+  }
+
+  &.topCenter {
+    top: toRem(16);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.topRight {
+    top: toRem(16);
+    right: toRem(16);
+  }
+
+  &.left {
+    top: 50%;
+    transform: translateY(-50%);
+    left: toRem(16);
+  }
+
+  &.right {
+    top: 50%;
+    transform: translateY(-50%);
+    right: toRem(16);
+  }
+
+  &.bottomLeft {
+    bottom: toRem(16);
+    left: toRem(16);
+  }
+
+  &.bottomCenter {
+    bottom: toRem(16);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottomRight {
+    bottom: toRem(16);
+    right: toRem(16);
+  }
+}
+
+.noActionsContainer {
+  row-gap: 0;
+}
+
+.defaultAlert {
+  border-color: $blue;
+  background-color: $blue-100;
+  box-shadow: 0 toRem(4) toRem(8) 0 rgba(44, 116, 214, 0.2);
+}
+
+.successAlert {
+  border-color: $green;
+  background-color: $green-100;
+  box-shadow: 0 toRem(4) toRem(8) 0 rgba(22, 175, 36, 0.2);
+}
+
+.errorAlert {
+  border-color: $red;
+  background-color: $red-100;
+  box-shadow: 0 toRem(4) toRem(8) 0 rgba(220, 54, 46, 0.2);
+}
+
+.warningAlert {
+  border-color: $orange;
+  background-color: $orange-100;
+  box-shadow: 0 toRem(4) toRem(8) 0 rgba(247, 144, 9, 0.2);
+}
+
+.contentWrapper {
+  display: flex;
+  column-gap: toRem(12);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: toRem(4);
+}
+
+.defaultTitle {
+  color: $blue-700;
+}
+
+.successTitle {
+  color: $green-800;
+}
+
+.errorTitle {
+  color: $red-700;
+}
+
+.warningTitle {
+  color: $orange-800;
+}
+
+.closeButton {
+  cursor: pointer;
+}
+
+.actionsWrapper {
+  &:empty {
+    padding-bottom: toRem(16);
+  }
+}
+
+// Below classes are for custom styling storybook
+
+.customAlert {
+  background-color: lightgray;
+  border-color: blueviolet;
+  border-width: toRem(4);
+  border-radius: toRem(20);
+}

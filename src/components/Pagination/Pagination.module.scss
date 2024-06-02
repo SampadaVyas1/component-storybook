@@ -1,0 +1,195 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+@mixin size($width) {
+  @if $width == small {
+    width: toRem(32);
+  } @else if $width == medium {
+    width: toRem(40);
+  } @else if $width == large {
+    width: toRem(48);
+  }
+}
+
+.paginationContainer {
+  @include displayFlex(row);
+
+  &.left {
+    justify-content: flex-start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  .paginationItemsContainer {
+    @include displayFlex(row, flex-start, center, toRem(16));
+    width: fit-content;
+
+    &.small {
+      height: toRem(32);
+    }
+
+    &.medium {
+      height: toRem(40);
+    }
+
+    &.large {
+      height: toRem(48);
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &.buttonContainer {
+      height: inherit;
+      border: none;
+      background: none;
+    }
+
+    .paginationWrapper {
+      @include displayFlex(row, flex-start, center);
+      height: inherit;
+      column-gap: toRem(8);
+      width: fit-content;
+      user-select: none;
+
+      .paginationItem {
+        @include displayFlex(row, center, center);
+        border-radius: toRem(8);
+        height: 100%;
+        cursor: pointer;
+
+        &.small {
+          @include size(small);
+        }
+
+        &.medium {
+          @include size(medium);
+        }
+
+        &.large {
+          @include size(large);
+        }
+
+        &.selected {
+          background: $blue-100;
+          color: $blue;
+        }
+
+        &.disabled {
+          pointer-events: none;
+          opacity: 0.3;
+        }
+
+        &:hover {
+          background: $grey-100;
+        }
+
+        &:active {
+          background: $grey-200;
+        }
+
+        &.dots {
+          cursor: default;
+
+          &:hover {
+            background: initial;
+          }
+        }
+      }
+    }
+  }
+
+  .dropdownContainer {
+    border-radius: toRem(8);
+    width: toRem(130);
+    cursor: pointer;
+
+    &.small {
+      height: toRem(32);
+    }
+
+    &.medium {
+      height: toRem(40);
+    }
+
+    &.large {
+      height: toRem(48);
+    }
+
+    .dropdownOption {
+      @include typography($roboto-regular, 400, toRem(14));
+    }
+
+    .dropdownInput {
+      cursor: pointer;
+      font-size: toRem(14);
+      padding: 0 toRem(18) 0 toRem(12);
+    }
+  }
+
+  .inputContainer {
+    border: 1px solid $blue-grey-600;
+    border-radius: toRem(8);
+    height: inherit;
+    text-align: center;
+    @include typography($roboto-regular, 500, toRem(14));
+
+    &.small {
+      @include size(small);
+    }
+
+    &.medium {
+      @include size(medium);
+    }
+
+    &.large {
+      @include size(large);
+    }
+
+    &:hover {
+      border: 1px solid $blue;
+    }
+
+    &:active {
+      border: 2px solid $blue;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 2px solid $blue;
+    }
+  }
+
+  .pageSelectionContainer {
+    user-select: none;
+    height: inherit;
+    width: fit-content;
+    text-wrap: nowrap;
+    @include displayFlex(row, flex-start, center, toRem(8));
+  }
+}
+
+.dropdownWrapper {
+  height: inherit;
+}
+
+.dropdownInputContainer {
+  border-radius: toRem(8);
+}
+// Below styles are for storybook
+
+.customPaginationStyle {
+  padding: toRem(32) 0;
+}
+
+.pageSizeOption {
+  max-height: toRem(40);
+}

@@ -1,0 +1,17 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.badgeWithContent {
+  min-width: toRem(20);
+  height: toRem(20);
+  @include displayFlex(null, center, center);
+  padding: 0 6px;
+  border-radius: toRem(10);
+  width: fit-content;
+}
+
+.badgeWithoutContent {
+  border-radius: 50%;
+  height: toRem(8);
+  width: toRem(8);
+}

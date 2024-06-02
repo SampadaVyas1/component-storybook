@@ -1,0 +1,44 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.chip {
+  padding: toRem(2) toRem(8);
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: toRem(4);
+  @include typography($roboto-medium, 500, toRem(14), 145%, toRem(0.5));
+  color: $blue-grey-1000;
+}
+.rounded {
+  border-radius: toRem(4);
+}
+
+.circular {
+  border-radius: toRem(20);
+}
+
+.filled {
+  background: $blue-10;
+  border: 1px solid $blue-10;
+}
+
+.outlined {
+  border: 1px solid $blue-550;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.active {
+  background: $blue-150;
+}
+
+.removeIcon {
+  cursor: pointer;
+  width: toRem(12);
+  height: toRem(12);
+}

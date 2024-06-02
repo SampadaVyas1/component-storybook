@@ -1,0 +1,187 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.dropdownContainer {
+  @include position(relative);
+
+  .input {
+    @include displayFlex(null, flex-start, center);
+    border-radius: toRem(4);
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+
+    .dropdownArrowIcon {
+      @include displayFlex(null, center, center);
+      position: absolute;
+      padding: 0 toRem(8);
+      right: 0;
+      height: 100%;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.7;
+    color: $grey-200;
+
+    .input {
+      box-shadow: none;
+    }
+  }
+}
+
+.nativeInput {
+  display: inline-block;
+  padding: toRem(8) toRem(36) toRem(8) toRem(12);
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border-radius: toRem(8);
+  box-shadow: 0px 1px 2px 0px $blue-850;
+
+  ::placeholder {
+    @include typography($roboto-regular, 400, toRem(16));
+    letter-spacing: 0em;
+    text-align: left;
+    color: $grey-400;
+  }
+
+  &:focus-visible {
+    border: 1px solid $blue;
+    box-shadow: 0px 0px 0px 2px $blue-200;
+    outline: none;
+  }
+}
+
+.optionContainer {
+  @include customScrollbarStyles();
+  @include position(absolute, auto, 0, auto, 0);
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px -2px $blue-950;
+  z-index: 1500;
+  margin-top: toRem(4);
+  overflow-y: auto;
+
+  &.topAlign {
+    @include position(absolute, auto, 0, 100%, 0);
+    margin-bottom: toRem(4);
+  }
+
+  &.bottomAlign {
+    @include position(absolute, auto, 0, auto, 0);
+  }
+
+  .option {
+    padding: toRem(10) toRem(14);
+    color: $grey-800;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    &:hover {
+      background-color: $grey-50;
+    }
+
+    &.selectedOption {
+      background-color: $blue-20;
+    }
+
+    &.selectAll {
+      display: flex;
+      column-gap: toRem(8);
+      .label {
+        flex: 1;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+      color: $grey-1000;
+      background-color: $grey-100;
+    }
+  }
+
+  .checkboxOption {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(8);
+  }
+
+  .noMatches {
+    padding: toRem(10) toRem(14);
+    text-align: center;
+    color: $grey-800;
+  }
+}
+
+.chipContainer {
+  @include displayFlex(null, null, center);
+  flex-wrap: wrap;
+  row-gap: toRem(4);
+  column-gap: toRem(4);
+  border-radius: toRem(4);
+  box-shadow: 0px 1px 2px 0px $blue-850;
+  outline: 1px solid $grey-300;
+  padding: 0 toRem(12);
+  min-height: toRem(40);
+  height: inherit;
+  width: 100%;
+
+  .chipCount {
+    color: $blue;
+    cursor: default;
+
+    &.hasTooltip {
+      cursor: pointer;
+    }
+  }
+
+  .tooltipWrapperContainer {
+    @include customScrollbarStyles();
+    @include displayFlex(column);
+    row-gap: toRem(8);
+    padding: toRem(8);
+    background-color: $white;
+    border-radius: toRem(4);
+    outline: 1px solid $grey-200;
+    box-shadow: 0 0 5px 1px $blue-850;
+    max-height: toRem(150);
+    overflow-y: auto;
+    z-index: 1600;
+  }
+}
+
+.arrowIcon {
+  cursor: pointer;
+  &.arrowOpen {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+  }
+  &.arrowClose {
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+  }
+}
+
+.selectedSingleOption {
+  &::placeholder {
+    color: $grey-800;
+  }
+}
+
+// Below styles are for storybook
+
+.chipContainer {
+  .customTooltipStyle {
+    background-color: rgba(255, 217, 0, 0.5);
+    padding: toRem(16);
+    border: 4px solid rgba(255, 145, 0, 0.5);
+    border-radius: toRem(12);
+  }
+}

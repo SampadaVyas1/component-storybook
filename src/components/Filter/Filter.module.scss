@@ -1,0 +1,176 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.filterContainer {
+  position: absolute;
+  z-index: 1010;
+  display: flex;
+  flex-direction: column;
+  width: toRem(680);
+  height: 60vh;
+  min-height: toRem(300);
+  border-radius: toRem(4);
+  box-shadow: 0px 1px toRem(8) 0px $grey-1300;
+  background-color: $white;
+
+  &.bottomLeft {
+    top: calc(100% + toRem(4));
+    left: 0;
+  }
+
+  &.bottomRight {
+    top: calc(100% + toRem(4));
+    right: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: toRem(16) toRem(24);
+
+    .close {
+      cursor: pointer;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    outline: 1px solid $blue-grey-500;
+
+    .leftContainer {
+      border-right: 1px solid $blue-grey-500;
+      min-width: 45%;
+
+      .segmentsClassName {
+        width: 100%;
+        border: none;
+      }
+
+      .activeTab {
+        background-color: $blue-grey-650;
+        color: $blue;
+        border: none;
+      }
+
+      .segmentContainer {
+        width: inherit;
+        padding: toRem(24);
+        flex-direction: column;
+        border: none;
+
+        .tabButton {
+          border-radius: toRem(4);
+        }
+      }
+
+      .tabButton {
+        border: none;
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+
+    .rightContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+
+      &.loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .searchWrapper {
+        padding: toRem(24) toRem(36);
+      }
+
+      .filters {
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
+        @include customScrollbarStyles($grey-300);
+
+        .filter {
+          padding: toRem(4) toRem(24);
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+
+          .label {
+            padding: toRem(12) toRem(16);
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: toRem(16);
+    display: flex;
+    justify-content: flex-end;
+    column-gap: toRem(24);
+
+    .button {
+      border-radius: toRem(4);
+    }
+  }
+}
+
+.triggerElement {
+  border: 1px solid $blue;
+  border-radius: toRem(4);
+  outline: none;
+  padding: toRem(9);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  --webkit-appearance: none;
+
+  &:hover {
+    background-color: $blue-50;
+  }
+}
+
+.buttonContainer {
+  position: relative;
+  .badge {
+    position: absolute;
+    top: toRem(-8);
+    right: toRem(-8);
+    color: $white;
+    @include displayFlex(row, center, center);
+  }
+}
+
+.retryButtonContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .error {
+    color: $black;
+    padding: toRem(16);
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}

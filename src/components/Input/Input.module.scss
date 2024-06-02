@@ -1,0 +1,66 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+@import 'src/styles/typography';
+
+.inputContainer {
+  padding: toRem(8) toRem(12);
+  outline: 1px solid $grey-300;
+  border-radius: toRem(4);
+  background: $white;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  display: flex;
+  column-gap: toRem(8);
+  justify-content: flex-start;
+  align-items: center;
+
+  &:hover {
+    outline: 1px solid $blue;
+  }
+
+  &:focus-within {
+    outline: 2px solid $blue;
+    box-shadow: 0px 0px 0px 2px $blue-20, 0px 1px 2px 0px rgba(26, 120, 194, 0.08);
+  }
+
+  &.disabledInput {
+    outline-color: $grey-250;
+    cursor: not-allowed;
+
+    input {
+      background-color: transparent;
+      color: $grey-350;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: $grey-350;
+      }
+    }
+  }
+
+  &.error {
+    outline: 1px solid $red;
+
+    &:hover {
+      outline: 1px solid $red;
+    }
+  }
+}
+
+input {
+  outline: 1px solid transparent;
+  width: 100%;
+  @include typography($fontFamilyRobotoRegular, 400, toRem(16), toRem(24), 0.5px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  flex: 1;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    @include typography($fontFamilyRobotoRegular, 400, toRem(16), toRem(24), 0.5px);
+  }
+}

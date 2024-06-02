@@ -1,0 +1,31 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.navbar {
+  display: flex;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px 0 rgba(137, 140, 145, 0.24);
+  align-items: center;
+}
+
+.navbarLogo {
+  margin: toRem(8);
+  margin-left: toRem(26);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navbarContent {
+  margin-left: auto;
+  padding: toRem(8);
+  margin-right: toRem(40);
+}
+
+@media screen and (max-width: 720px) {
+  .dropdownMenu {
+    margin-left: toRem(26);
+    cursor: pointer;
+  }
+}

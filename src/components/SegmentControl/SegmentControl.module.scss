@@ -1,0 +1,54 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.segments {
+  @include displayInlineFlex(row, center, center);
+  border: 1px solid $grey-200;
+  border-radius: toRem(4);
+  padding: toRem(4);
+
+  .segmentTabs {
+    @include displayFlex(row, center, center);
+    @include buttonAppearance($white, $black);
+
+    & > button {
+      border: none;
+      padding: toRem(10) toRem(16);
+
+      &:hover:not(.activeSegment) {
+        background-color: $grey-200;
+      }
+    }
+  }
+
+  .activeSegment {
+    @include buttonAppearance($grey-150, $grey-950);
+  }
+}
+
+// Below styles are used in stories
+.customSegmentsWrapper {
+  border: 2px dashed rgba(50, 180, 200, 0.4);
+  background-color: rgba(50, 180, 200, 0.1);
+  border-radius: toRem(10);
+}
+
+.customTabs {
+  button {
+    border: none;
+    border-radius: toRem(10);
+
+    &:hover:not(.customActiveTab) {
+      background-color: rgba(50, 180, 200, 0.4);
+    }
+
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+}
+
+.customActiveTab {
+  color: white;
+  background-color: rgba(50, 180, 200, 1);
+}

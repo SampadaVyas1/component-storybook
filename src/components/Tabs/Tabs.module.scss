@@ -1,0 +1,35 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.tabs {
+  display: flex;
+}
+
+.tabButton {
+  min-width: toRem(172);
+
+  &:disabled {
+    color: $grey-350;
+    pointer-events: none;
+  }
+}
+
+//Below styles are for storybook
+.customTabButton {
+  min-width: auto;
+  background-color: $orange-200;
+
+  &:disabled {
+    background-color: $orange-100;
+  }
+}
+
+.customTabActive {
+  border-bottom-color: $orange;
+  border-bottom-width: toRem(4);
+  color: $orange;
+}
+
+.activeTabButton {
+  font-weight: 900;
+}

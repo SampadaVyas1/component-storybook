@@ -1,0 +1,284 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+
+.datePicker {
+  @include displayFlex(null, space-between, null);
+  position: relative;
+  width: toRem(328);
+  outline: 1px solid $grey-disabled;
+  border-radius: toRem(4);
+  background-color: $white;
+
+  hr {
+    border-top: 1px solid $grey-100;
+  }
+
+  &.noStyles {
+    border: none;
+    width: fit-content;
+  }
+
+  .calendarIcon {
+    position: absolute;
+    z-index: 1000;
+    right: toRem(12);
+    bottom: toRem(12);
+    pointer-events: none;
+  }
+
+  &:hover {
+    outline: 1px solid $blue;
+  }
+
+  &:focus-within {
+    outline: 2px solid $blue;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    font-size: toRem(16);
+    width: inherit;
+    padding: toRem(12) toRem(16);
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .calendar {
+    @include displayFlex(column, null, null);
+    position: absolute;
+    width: toRem(328);
+    min-height: toRem(370);
+    top: 110%;
+    background: inherit;
+    left: 0;
+    border-radius: toRem(4);
+    box-shadow: 0 0 toRem(10) rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+
+    .header {
+      @include displayFlex(null, space-between, null);
+      width: 100%;
+      padding: toRem(24) toRem(24) toRem(16) toRem(24);
+      user-select: none;
+
+      .monthView {
+        @include displayFlex(null, center, center);
+        column-gap: toRem(4);
+        padding-left: toRem(4);
+        cursor: pointer;
+
+        &:hover {
+          background-color: $blue-grey-400;
+          border-radius: toRem(4);
+        }
+      }
+
+      .back {
+        cursor: pointer;
+        color: $blue-575;
+        margin-right: auto;
+      }
+
+      .changeMonth {
+        @include displayFlex();
+        column-gap: toRem(8);
+      }
+    }
+
+    .weekdays,
+    .daysGrid {
+      padding: 0 toRem(24) toRem(24);
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      row-gap: toRem(16);
+      text-align: center;
+      user-select: none;
+    }
+
+    .weekdays {
+      padding: toRem(16) toRem(24) toRem(24);
+
+      .weekday {
+        @include displayFlex(null, center, center);
+        width: toRem(40);
+        height: toRem(40);
+      }
+    }
+
+    .day {
+      padding: toRem(10);
+      min-height: toRem(40);
+      cursor: pointer;
+      @include displayFlex(null, center, center);
+
+      &:empty {
+        cursor: default;
+      }
+
+      &.current {
+        &:hover {
+          border-radius: toRem(4);
+          box-shadow: inset 0 0 0 2px $blue;
+        }
+      }
+
+      &.selected {
+        background: $blue;
+        color: $white;
+        border-radius: toRem(4);
+        padding: toRem(10);
+      }
+
+      &.currentDate {
+        border-radius: toRem(4);
+        border: 1px solid $blue;
+      }
+
+      &.inRangeDate {
+        background: $blue-grey-400;
+      }
+
+      &.disabledDate {
+        color: $grey-500;
+        pointer-events: none;
+      }
+    }
+
+    .monthsGridContainer {
+      width: 100%;
+
+      .monthsGridHeader {
+        @include displayFlex(null, flex-start, center);
+        padding: toRem(24) toRem(24) toRem(16) toRem(24);
+
+        .selectedYearContainer {
+          @include displayFlex(null, center, center);
+          column-gap: toRem(4);
+          padding-left: toRem(4);
+          cursor: pointer;
+
+          &:hover {
+            background-color: $blue-grey-400;
+            border-radius: toRem(4);
+          }
+        }
+      }
+
+      .monthsGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: toRem(16);
+        padding: toRem(16);
+
+        .month {
+          padding: toRem(6) toRem(12);
+          border: 1px solid transparent;
+          text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            border-radius: toRem(4);
+            box-shadow: inset 0 0 0 2px $blue;
+          }
+          &.selected {
+            background: $blue;
+            color: $white;
+            border-radius: toRem(4);
+          }
+        }
+      }
+    }
+
+    .yearGridMainContainer {
+      width: 100%;
+      .back {
+        @include displayFlex(null, space-between, null);
+        padding: toRem(24) toRem(24) toRem(16) toRem(24);
+
+        .yearsRange {
+          @include displayFlex(null, center, center);
+          column-gap: toRem(4);
+          padding-left: toRem(4);
+          cursor: pointer;
+
+          &:hover {
+            background-color: $blue-grey-400;
+            border-radius: toRem(4);
+          }
+        }
+
+        .yearControls {
+          @include displayFlex(null, null, null);
+          column-gap: toRem(8);
+        }
+      }
+      .yearGridContainer {
+        @include displayFlex(null, null, center);
+        padding: toRem(16);
+
+        .yearControls {
+          @include displayFlex(null, null, null);
+          margin-bottom: toRem(10);
+        }
+      }
+    }
+
+    .yearsGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      flex: 1;
+      row-gap: toRem(14);
+      column-gap: toRem(8);
+
+      .year {
+        padding: toRem(6) toRem(12);
+        border: 1px solid transparent;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          border-radius: toRem(4);
+          box-shadow: inset 0 0 0 2px $blue;
+        }
+
+        &.selected {
+          background: $blue;
+          color: $white;
+          border-radius: toRem(4);
+        }
+      }
+    }
+  }
+
+  .prevButton,
+  .nextButton {
+    @include displayFlex(null, center, center);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue-grey-400;
+      border-radius: toRem(4);
+    }
+  }
+}
+
+// Below styles are for storybook
+
+.userDefinedClass {
+  border-radius: toRem(20);
+  outline: 1px solid rgba(25, 50, 0, 0.2);
+  background-color: rgba(100, 150, 0, 0.2);
+
+  &:hover {
+    outline: 2px solid rgba(25, 50, 0, 0.6);
+  }
+
+  &:focus-within {
+    outline: 2px solid rgba(0, 0, 0, 1);
+  }
+
+  input {
+    border-radius: toRem(20);
+  }
+}

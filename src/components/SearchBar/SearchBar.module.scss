@@ -1,0 +1,15 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.searchBarContainer.searchBarContainer {
+  border-radius: toRem(4);
+  padding: toRem(8) toRem(12);
+}
+
+.searchBarContainer {
+  border: none;
+}
+
+.searchBar::placeholder {
+  color: $grey-700;
+}

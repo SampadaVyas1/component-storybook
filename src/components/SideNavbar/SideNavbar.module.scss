@@ -1,0 +1,33 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.sideNavBarContainer {
+  padding: toRem(5);
+  display: flex;
+  flex-direction: column;
+  max-width: toRem(264);
+
+  .sideNavbarHeader {
+    padding-top: toRem(32);
+    padding-left: toRem(12);
+    padding-right: toRem(12);
+    padding-bottom: toRem(24);
+  }
+
+  .mainContainer {
+    padding: toRem(12);
+  }
+
+  .supportingContainer {
+    padding: toRem(12);
+    margin-top: auto;
+  }
+
+  .footerContainer {
+    padding: toRem(12);
+
+    .footer {
+      border: 1px solid $grey-100;
+    }
+  }
+}

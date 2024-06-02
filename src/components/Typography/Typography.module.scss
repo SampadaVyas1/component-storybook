@@ -1,0 +1,228 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.d1-bold {
+  @include typography($montserrat-bold, 700, toRem(80), 135%, toRem(0.5));
+}
+
+.d1-medium {
+  @include typography($montserrat-medium, 500, toRem(80), 135%, toRem(0.5));
+}
+
+.d1-light {
+  @include typography($montserrat-light, 300, toRem(80), 135%, toRem(0.5));
+}
+
+.d2-bold {
+  @include typography($montserrat-bold, 700, toRem(72), 135%, toRem(0.5));
+}
+
+.d2-medium {
+  @include typography($montserrat-medium, 500, toRem(72), 135%, toRem(0.5));
+}
+
+.d2-light {
+  @include typography($montserrat-light, 300, toRem(72), 135%, toRem(0.5));
+}
+
+.d3-bold {
+  @include typography($montserrat-bold, 700, toRem(64), 135%, toRem(0.5));
+}
+
+.d3-medium {
+  @include typography($montserrat-medium, 500, toRem(64), 135%, toRem(0.5));
+}
+
+.d3-light {
+  @include typography($montserrat-light, 300, toRem(64), 135%, toRem(0.5));
+}
+
+.h1-bold {
+  @include typography($montserrat-bold, 700, toRem(48), 110%, toRem(0.5));
+}
+
+.h1-medium {
+  @include typography($montserrat-medium, 500, toRem(48), 110%, toRem(0.5));
+}
+
+.h1-light {
+  @include typography($montserrat-light, 300, toRem(48), 110%, toRem(0.5));
+}
+
+.h2-bold {
+  @include typography($montserrat-bold, 700, toRem(32), 120%, toRem(0.5));
+}
+
+.h2-medium {
+  @include typography($montserrat-medium, 500, toRem(32), 120%, toRem(0.5));
+}
+
+.h2-light {
+  @include typography($montserrat-light, 300, toRem(32), 120%, toRem(0.5));
+}
+
+.h3-bold {
+  @include typography($montserrat-bold, 700, toRem(24), 125%, toRem(0.5));
+}
+
+.h3-medium {
+  @include typography($montserrat-medium, 500, toRem(24), 125%, toRem(0.5));
+}
+
+.h3-light {
+  @include typography($montserrat-light, 300, toRem(24), 125%, toRem(0.5));
+}
+
+.h4-bold {
+  @include typography($montserrat-bold, 700, toRem(20), 130%, toRem(0.5));
+}
+
+.h4-medium {
+  @include typography($montserrat-medium, 500, toRem(20), 130%, toRem(0.5));
+}
+
+.h4-light {
+  @include typography($montserrat-light, 300, toRem(20), 130%, toRem(0.5));
+}
+
+.h5-bold {
+  @include typography($montserrat-bold, 700, toRem(18), 150%, toRem(0.5));
+}
+
+.h5-medium {
+  @include typography($montserrat-medium, 500, toRem(18), 150%, toRem(0.5));
+}
+
+.h5-light {
+  @include typography($montserrat-light, 300, toRem(18), 150%, toRem(0.5));
+}
+
+.h6-bold {
+  @include typography($montserrat-bold, 700, toRem(16), 150%, toRem(0.5));
+}
+
+.h6-medium {
+  @include typography($montserrat-medium, 500, toRem(16), 150%, toRem(0.5));
+}
+
+.h6-light {
+  @include typography($montserrat-light, 300, toRem(16), 150%, toRem(0.5));
+}
+
+.b1-bold {
+  @include typography($roboto-bold, 700, toRem(20), 150%, toRem(0.5));
+}
+
+.b1-medium {
+  @include typography($roboto-medium, 500, toRem(20), 150%, toRem(0.5));
+}
+
+.b1-regular {
+  @include typography($roboto-regular, 400, toRem(20), 150%, toRem(0.5));
+}
+
+.b1-light {
+  @include typography($roboto-light, 300, toRem(20), 150%, toRem(0.5));
+}
+
+.b2-bold {
+  @include typography($roboto-bold, 700, toRem(16), 150%, toRem(0.5));
+}
+
+.b2-medium {
+  @include typography($roboto-medium, 500, toRem(16), 150%, toRem(0.5));
+}
+
+.b2-regular {
+  @include typography($roboto-regular, 400, toRem(16), 150%, toRem(0.5));
+}
+
+.b2-light {
+  @include typography($roboto-light, 300, toRem(16), 150%, toRem(0.5));
+}
+
+.b3-bold {
+  @include typography($roboto-bold, 700, toRem(14), 145%, toRem(0.5));
+}
+
+.b3-medium {
+  @include typography($roboto-medium, 500, toRem(14), 145%, toRem(0.5));
+}
+
+.b3-regular {
+  @include typography($roboto-regular, 400, toRem(14), 145%, toRem(0.5));
+}
+
+.b3-light {
+  @include typography($roboto-light, 300, toRem(14), 145%, toRem(0.5));
+}
+
+.b4-bold {
+  @include typography($roboto-bold, 700, toRem(12), 150%, toRem(0.5));
+}
+
+.b4-medium {
+  @include typography($roboto-medium, 500, toRem(12), 150%, toRem(0.5));
+}
+
+.b4-regular {
+  @include typography($roboto-regular, 400, toRem(12), 150%, toRem(0.5));
+}
+
+.b4-light {
+  @include typography($roboto-light, 300, toRem(12), 150%, toRem(0.5));
+}
+
+.c1-medium {
+  @include typography($roboto-medium, 500, toRem(14), 130%, toRem(0.5));
+}
+
+.c1-regular {
+  @include typography($roboto-regular, 400, toRem(14), 130%, toRem(0.5));
+}
+
+.c2-medium {
+  @include typography($roboto-medium, 500, toRem(12), 130%, toRem(0.5));
+}
+
+.c2-regular {
+  @include typography($roboto-regular, 400, toRem(12), 130%, toRem(0.5));
+}
+
+.l1-medium {
+  @include typography($roboto-medium, 500, toRem(16), 150%, toRem(0.5));
+  text-decoration-line: underline;
+  color: $blue-600;
+}
+
+.l1-regular {
+  @include typography($roboto-regular, 400, toRem(16), 150%, toRem(0.5));
+  text-decoration-line: underline;
+  color: $blue-600;
+}
+
+.l2-medium {
+  @include typography($roboto-medium, 500, toRem(14), 145%, toRem(0.5));
+  text-decoration-line: underline;
+  color: $blue-600;
+}
+
+.l2-regular {
+  @include typography($roboto-regular, 400, toRem(14), 145%, toRem(0.5));
+  text-decoration-line: underline;
+  color: $blue-600;
+}
+
+.bt1-bold {
+  @include typography($roboto-bold, 700, toRem(14), 145%, toRem(0.5));
+}
+
+.bt1-1-bold {
+  @include typography($roboto-bold, 700, toRem(14), 145%, toRem(0.5));
+  text-transform: uppercase;
+}
+
+.bt2-bold {
+  @include typography($roboto-bold, 700, toRem(12), 150%, toRem(0.5));
+  text-transform: uppercase;
+}

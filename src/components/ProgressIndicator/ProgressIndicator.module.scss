@@ -1,0 +1,91 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.mainContainer {
+  display: flex;
+
+  &.rightText {
+    flex-direction: row;
+    align-items: center;
+    column-gap: toRem(12);
+
+    .progressWrapper {
+      flex: 1;
+    }
+  }
+
+  &.bottomText {
+    flex-direction: column;
+    row-gap: toRem(8);
+  }
+}
+
+.progressWrapper {
+  display: flex;
+  border-radius: toRem(4);
+  height: toRem(8);
+}
+
+.progressIndicator {
+  border-radius: toRem(4);
+  transition: width 0.6s ease;
+  position: relative;
+
+  .percentageTooltip {
+    position: absolute;
+    padding: toRem(8) toRem(11);
+    right: 0;
+    transform: translateX(50%);
+    border-radius: toRem(4);
+    background-color: $grey-950;
+    color: $grey-50;
+
+    &::after {
+      content: '';
+      background-color: inherit;
+      transform: rotate(45deg) translateX(-80%);
+      left: 50%;
+      position: absolute;
+      width: toRem(8);
+      height: toRem(8);
+    }
+
+    &.top {
+      bottom: calc(100% + toRem(9));
+
+      &::after {
+        bottom: calc(toRem(8) * -1);
+      }
+    }
+
+    &.bottom {
+      top: calc(100% + toRem(9));
+
+      &::after {
+        top: 1px;
+      }
+    }
+  }
+}
+
+.hoveringTooltip {
+  .progressIndicator {
+    .percentageTooltip {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .progressIndicator {
+      .percentageTooltip {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.percentageText {
+  align-self: flex-end;
+  color: $grey-700;
+}

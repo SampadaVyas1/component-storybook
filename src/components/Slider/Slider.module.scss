@@ -1,0 +1,164 @@
+@import 'src/styles/_mixins.scss';
+@import 'src/styles/constants';
+
+$thumb-size: toRem(24);
+
+@mixin track-styles {
+  appearance: none;
+  background: transparent;
+  border: transparent;
+}
+
+@mixin thumb-styles {
+  appearance: none;
+  pointer-events: all;
+  width: $thumb-size;
+  height: $thumb-size;
+  border-radius: 0px;
+  border: 0 none;
+
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.sliderParent {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: toRem(12);
+  width: inherit;
+
+  &:hover .control {
+    outline: 4px solid $blue-100;
+  }
+  &:active .control {
+    outline: 4px solid $blue-200;
+  }
+  .wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: $thumb-size;
+
+    .inputWrapper {
+      width: calc(100% + #{$thumb-size});
+      margin: 0 calc(#{$thumb-size} / -2);
+      position: absolute;
+      height: $thumb-size;
+
+      .input {
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+        appearance: none;
+        height: 100%;
+        opacity: 0;
+        z-index: 1001;
+        padding: 0;
+        &::-ms-track {
+          @include track-styles;
+        }
+
+        &::-moz-range-track {
+          @include track-styles;
+        }
+
+        &:focus::-webkit-slider-runnable-track {
+          @include track-styles;
+        }
+
+        &::-ms-thumb {
+          @include thumb-styles;
+        }
+
+        &::-moz-range-thumb {
+          @include thumb-styles;
+        }
+
+        &::-webkit-slider-thumb {
+          @include thumb-styles;
+        }
+      }
+    }
+    .controlWrapper {
+      width: 100%;
+      height: calc(#{$thumb-size});
+      position: absolute;
+
+      .control {
+        width: $thumb-size;
+        height: $thumb-size;
+        border-radius: 50%;
+        position: absolute;
+        background: $blue;
+        top: 50%;
+        margin-left: calc(#{$thumb-size} / -2);
+        transform: translate3d(0, -50%, 0);
+        transition: left ease-in-out;
+        z-index: 1000;
+        border-radius: 50%;
+        box-shadow: 0 0 2px 0 #555;
+        cursor: grabbing;
+
+        &.disabledControl {
+          background-color: $grey-600;
+        }
+
+        &:active {
+          outline: 4px solid $blue-200;
+          cursor: grab;
+        }
+      }
+
+      .rail {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        border-radius: 3px;
+        background: lightgrey;
+
+        &.disabledTrack {
+          background-image: linear-gradient($grey-200, $grey-400);
+          pointer-events: none;
+
+          .innerRail {
+            background-image: linear-gradient($grey-200, $grey-400);
+          }
+        }
+      }
+
+      .innerRail {
+        position: absolute;
+        height: 100%;
+        background: $blue;
+      }
+
+      .bottomLabel {
+        position: absolute;
+        top: calc(50% + (#{$thumb-size}));
+        width: $thumb-size;
+        text-align: center;
+        margin-left: calc(#{$thumb-size}/ -2);
+        z-index: 1001;
+      }
+
+      .topLabel {
+        position: absolute;
+        top: calc(50% - 1rem - (#{$thumb-size}));
+        width: $thumb-size;
+        text-align: center;
+        margin-left: calc(#{$thumb-size}/ -2);
+        z-index: 1001;
+      }
+    }
+  }
+}

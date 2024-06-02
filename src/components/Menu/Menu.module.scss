@@ -1,0 +1,79 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.menuContainer {
+  position: relative;
+  display: inline-block;
+
+  .menu {
+    position: absolute;
+    z-index: 1000;
+    margin: 0 toRem(4);
+    border-radius: toRem(4);
+    border: 1px solid $grey-100;
+    background: $white;
+    box-shadow: 0px toRem(4) toRem(8) 0px rgba(137, 140, 145, 0.2);
+    overflow: hidden;
+    width: fit-content;
+  }
+
+  .bottomLeft {
+    top: 100%;
+    left: 0;
+  }
+
+  .bottomRight {
+    top: 100%;
+    right: 0;
+  }
+
+  .topLeft {
+    bottom: 100%;
+    left: 0;
+  }
+
+  .topRight {
+    bottom: 100%;
+    right: 0;
+  }
+
+  .rightTop {
+    left: 100%;
+    top: 0;
+  }
+
+  .rightBottom {
+    left: 100%;
+    bottom: 0px;
+  }
+
+  .leftTop {
+    right: 100%;
+    top: 0;
+  }
+
+  .leftBottom {
+    right: 100%;
+    bottom: toRem(8);
+  }
+}
+
+.triggerElement {
+  border-radius: toRem(4);
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  --webkit-appearance: none;
+  min-width: toRem(36);
+  min-height: toRem(36);
+}
+
+// Below styles are for storybook
+.customTriggerElement {
+  border: 1px solid $text-disabled;
+}

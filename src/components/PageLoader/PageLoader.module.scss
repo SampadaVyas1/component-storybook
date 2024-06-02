@@ -1,0 +1,30 @@
+@import 'src/styles/mixins';
+
+.pageLoaderContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: toRem(10);
+  column-gap: toRem(10);
+}
+
+.top {
+  flex-direction: column-reverse;
+}
+
+.bottom {
+  flex-direction: column;
+}
+
+.right {
+  flex-direction: row;
+}
+
+.left {
+  flex-direction: row-reverse;
+}

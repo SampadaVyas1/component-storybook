@@ -1,0 +1,198 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+// TODO: Button Specific colors
+
+$primary-disabled: #a7d8ff;
+$primary-hover: #1a78c2;
+$primary-focus: #e4f2fe;
+$secondary-tint: #cbd8fe;
+$secondary-hover: #f0f8ff;
+$secondary-shadow: #e4f2fe;
+$tab-inactive: #667085;
+$tab-inactive-border: #eaecf0;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-color: transparent;
+  border-radius: toRem(8);
+  min-width: toRem(4);
+  padding: toRem(10) toRem(16);
+
+  &.large {
+    height: toRem(56);
+  }
+  &.medium {
+    height: toRem(48);
+  }
+  &.small {
+    height: toRem(40);
+  }
+  &.x-small {
+    height: toRem(36);
+  }
+}
+.primary {
+  @include buttonAppearance($blue, $white);
+  border: 1px solid transparent;
+
+  &:disabled {
+    @include buttonAppearance($grey-200, $grey-700);
+    pointer-events: none;
+  }
+
+  &:active {
+    @include buttonAppearance($blue-700, $white);
+  }
+
+  &:hover {
+    @include buttonAppearance($blue-600, $white);
+  }
+
+  &:active:hover {
+    @include buttonAppearance($blue-700, $white);
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $blue-800;
+    z-index: 1;
+  }
+}
+
+.secondary {
+  @include buttonAppearance($blue-100, $blue);
+  border: 1px solid transparent;
+
+  &:disabled {
+    @include buttonAppearance($grey-200, $grey-700);
+    pointer-events: none;
+  }
+
+  &:active {
+    @include buttonAppearance($blue-200, $blue);
+  }
+
+  &:hover {
+    @include buttonAppearance($blue-grey, $blue);
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $blue-800;
+  }
+}
+
+.tertiary {
+  @include buttonAppearance($transparent, $blue);
+  border: 1px solid transparent;
+
+  &:disabled {
+    @include buttonAppearance($white, $grey-700);
+    pointer-events: none;
+  }
+
+  &:active {
+    @include buttonAppearance($blue-200, $blue);
+  }
+
+  &:hover {
+    @include buttonAppearance($blue-grey, $blue);
+  }
+
+  &:active:hover {
+    @include buttonAppearance($blue-200, $blue);
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $blue-800;
+  }
+}
+
+.outlined {
+  @include buttonAppearance($transparent, $blue);
+  border: 1px solid $blue;
+
+  &:disabled {
+    border: 1px solid $grey-400;
+    @include buttonAppearance($white, $grey-700);
+    pointer-events: none;
+  }
+
+  &:active {
+    @include buttonAppearance($blue-200, $blue);
+  }
+
+  &:hover {
+    @include buttonAppearance($blue-grey, $blue);
+  }
+
+  &:active:hover {
+    @include buttonAppearance($blue-200, $blue);
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $blue-800;
+  }
+}
+
+.tab {
+  @include buttonAppearance($transparent, $tab-inactive);
+  border: 0;
+  border-radius: 0;
+  padding: toRem(12);
+  border-bottom: 2px solid $tab-inactive-border;
+
+  &:disabled {
+    @include buttonAppearance($white, $grey-disabled);
+    pointer-events: none;
+    border-bottom-color: $tab-inactive-border;
+  }
+}
+
+.activeTab {
+  @include buttonAppearance($transparent, $blue);
+  @include buttonAppearance($secondary-hover, $blue);
+  border-bottom: 2px solid $blue;
+  border-radius: toRem(4) toRem(4) 0 0;
+}
+
+.split {
+  @include displayFlex(null, null, stretch);
+  padding: 0;
+  background-color: transparent;
+  border: 0 solid transparent;
+}
+
+// styles for storybook
+.split {
+  .firstButton {
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: 1px solid $blue-500;
+  }
+
+  .secondButton {
+    border-radius: 0px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
+.destructiveButton {
+  background-color: $red;
+  &:active {
+    background-color: $red-700;
+  }
+  &:focus {
+    outline: 2px dashed $blue-800;
+  }
+  &:hover {
+    background-color: $red-600;
+  }
+  &:active:hover {
+    background-color: $red-700;
+  }
+}

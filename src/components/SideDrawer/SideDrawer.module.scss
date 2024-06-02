@@ -1,0 +1,54 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.drawerContainer {
+  .drawer {
+    width: fit-content;
+    background: $white;
+    height: 100%;
+    padding: toRem(24) toRem(24) toRem(16) toRem(24);
+    column-gap: toRem(24);
+    row-gap: toRem(24);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+
+    &.right {
+      @include position(fixed, 0, 100%, 0, 0);
+      transform: translateX(0%);
+    }
+
+    &.left {
+      @include position(fixed, 0, 0, 0, 0);
+      transform: translateX(-100%);
+    }
+  }
+
+  &.open {
+    visibility: visible;
+
+    .left {
+      transform: translateX(0%);
+    }
+
+    .right {
+      transform: translateX(-100%);
+    }
+  }
+
+  .backdrop {
+    @include position(fixed, 0, 0, 0, 0);
+    background-color: $grey-1200;
+    -webkit-backdrop-filter: blur(toRem(5));
+    backdrop-filter: blur(toRem(5));
+    -webkit-backdrop-filter: blur(toRem(5));
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.open {
+      visibility: visible;
+      opacity: 0.75;
+    }
+  }
+}

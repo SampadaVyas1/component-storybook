@@ -1,0 +1,21 @@
+@import './typography';
+@import './constants';
+@import './mixins';
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+html body {
+  color: $text-color;
+  font-family: Roboto-Regular;
+  font-size: 16px;
+}
