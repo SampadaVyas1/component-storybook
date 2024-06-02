@@ -1,0 +1,5 @@
+export const MAX_FILTER_CHIP_LENGTH_FOR_SMALL_SCREEN = 3;
+
+export const MAX_FILTER_CHIP_LENGTH = 4;
+
+export const MAX_CHIP_TOOLTIP_LENGTH = 8;

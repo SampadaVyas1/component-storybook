@@ -1,0 +1,74 @@
+$black: #000;
+$white: #fff;
+$transparent: transparent;
+
+$gray: #6d6d6d;
+$light-gray: #f4f4f4;
+$light-gray2: #ccc;
+$light-gray3: #f8f7f5;
+$light-gray4: #e8eaed;
+$light-gray5: #f5f5f5;
+$light-gray6: #d0d5dd;
+$light-gray7: #667085;
+$light-gray8: #ebddff;
+$light-gray9: #8888884d;
+$light-gray10: #555;
+$light-gray11: #fcfcfd;
+$light-gray12: #f2f4f7;
+$light-gray13: #e8eaed;
+$light-gray14: #555e68;
+
+$primary-blue: #3a49e3;
+$light-blue: #2196f3;
+$dark-blue: #0b0b3c;
+$background-blue: #eff0ff;
+$light-blue2: #44c1fd;
+
+$text-color: #020202;
+$text-gray: #475467;
+$dark-gray: #1e1e1e;
+
+$primary-violet: #6a14e8;
+$secondary-violet: #c3a1f6;
+$tertiary-violet: #7986cb;
+$background-violet: #f9f5ff;
+$page-violet: #841bc4;
+$page-blue: #1039a2;
+$hover-violet: #a1a9ce80;
+$box-shadow-violet: #7986cb80;
+
+$primary-red: #f04438;
+$secondary-red: #fef3f2;
+$background-red: #ffeeed;
+
+$primary-gray: #667085;
+$secondary-gray: #f9fafb;
+$border-gray: #eaecf0;
+$border-gray2: #e4e3e2;
+$light-gray: #fcfcfd;
+
+$primary-green: #12b76a;
+$background-green: #eafaf2;
+
+$primary-yellow: #f79009;
+$background-yellow: #fff5e9;
+
+$background-violet: #f9f5ff;
+$page-violet: #841bc4;
+$page-blue: #1039a2;
+
+//fonts
+$primary-font: 'RedHatText';
+$secondary-font: 'Ubuntu-Regular';
+$inter-font: 'Inter';
+//specific font color
+$title-color: #101828;
+
+$calculate-header: calc(100vh - 79px);
+
+$box-shadow:
+  0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+  0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+$box-shadow-menu: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+$screen-height-small: 700px;

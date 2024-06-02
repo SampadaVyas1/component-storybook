@@ -1,0 +1,96 @@
+@import 'src/styles/_variables.scss';
+@import 'src/styles/_mixins.scss';
+@import 'src/styles/_constants.scss';
+
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  background-color: $white;
+  color: $black;
+  border: toRem(1) solid $grey-1600;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: toRem(8);
+  padding: toRem(10) toRem(14);
+  @include textStyling(null, normal, 500, toRem(16), 120%);
+  .iconWrapper {
+    position: absolute;
+    top: toRem(12);
+    display: flex;
+  }
+  &.fullWidth {
+    width: 100%;
+  }
+  &.errorContainer {
+    @include errorContainer;
+  }
+
+  &.disabled {
+    background-color: $secondary-gray;
+  }
+}
+
+.errorContainer {
+  @include errorContainer;
+}
+
+.inputContainer {
+  background-color: $white;
+  color: $black;
+  padding-left: toRem(26);
+  outline: none;
+  border: none;
+  @include textStyling($primary-font, normal, 500, toRem(16), 120%);
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &:disabled {
+    background-color: $secondary-gray;
+    color: $primary-gray;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition:
+      background-color 600000s 0s,
+      color 600000s 0s;
+    @include textStyling($primary-font, normal, 500, toRem(16), 120%);
+  }
+  &[data-autocompleted] {
+    background-color: transparent !important;
+    @include textStyling($primary-font, normal, 500, toRem(16), 120%);
+  }
+}
+.inputContainerMain {
+  background-color: $white;
+  color: $black;
+  border: toRem(1) solid $grey-1500;
+  outline: none;
+  border-radius: toRem(4);
+  padding: toRem(12) toRem(16);
+  @include textStyling($primary-font, normal, 500, toRem(16), 120%);
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &:disabled {
+    background-color: $secondary-gray;
+    color: $primary-gray;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition:
+      background-color 600000s 0s,
+      color 600000s 0s;
+  }
+  &[data-autocompleted] {
+    background-color: transparent !important;
+  }
+}
+
+input {
+  width: 100%;
+}

@@ -1,9 +1,9 @@
 /* WebFont: Roboto-Bold */
 @font-face {
-  font-family: 'Roboto-Bold';
-  src: url('../assets/fonts/Roboto-Bold.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Bold.woff') format('woff'),
-    url('../assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-family: "Roboto-Bold";
+  src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Bold.woff") format("woff"),
+    url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -11,10 +11,10 @@
 
 /* WebFont: Roboto-Light */
 @font-face {
-  font-family: 'Roboto-Light';
-  src: url('../assets/fonts/Roboto-Light.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Light.woff') format('woff'),
-    url('../assets/fonts/Roboto-Light.ttf') format('truetype');
+  font-family: "Roboto-Light";
+  src: url("../assets/fonts/Roboto-Light.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Light.woff") format("woff"),
+    url("../assets/fonts/Roboto-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -22,10 +22,10 @@
 
 /* WebFont: Roboto-Medium */
 @font-face {
-  font-family: 'Roboto-Medium';
-  src: url('../assets/fonts/Roboto-Medium.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Medium.woff') format('woff'),
-    url('../assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-family: "Roboto-Medium";
+  src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Medium.woff") format("woff"),
+    url("../assets/fonts/Roboto-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -33,10 +33,10 @@
 
 /* WebFont: Roboto-Regular */
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Regular.woff') format('woff'),
-    url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-family: "Roboto-Regular";
+  src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -53,10 +53,10 @@
 
 /* WebFont: MontSerrat-Bold */
 @font-face {
-  font-family: 'MontSerrat-Bold';
-  src: url('../assets/fonts/MontSerrat-Bold.woff2') format('woff2'),
-    url('../assets/fonts/MontSerrat-Bold.woff') format('woff'),
-    url('../assets/fonts/MontSerrat-Bold.ttf') format('truetype');
+  font-family: "MontSerrat-Bold";
+  src: url("../assets/fonts/MontSerrat-Bold.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Bold.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -64,10 +64,10 @@
 
 /* WebFont: MontSerrat-Light */
 @font-face {
-  font-family: 'MontSerrat-Light';
-  src: url('../assets/fonts/MontSerrat-Light.woff2') format('woff2'),
-    url('../assets/fonts/MontSerrat-Light.woff') format('woff'),
-    url('../assets/fonts/MontSerrat-Light.ttf') format('truetype');
+  font-family: "MontSerrat-Light";
+  src: url("../assets/fonts/MontSerrat-Light.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Light.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -75,10 +75,10 @@
 
 /* WebFont: MontSerrat-Medium */
 @font-face {
-  font-family: 'MontSerrat-Medium';
-  src: url('../assets/fonts/MontSerrat-Medium.woff2') format('woff2'),
-    url('../assets/fonts/MontSerrat-Medium.woff') format('woff'),
-    url('../assets/fonts/MontSerrat-Medium.ttf') format('truetype');
+  font-family: "MontSerrat-Medium";
+  src: url("../assets/fonts/MontSerrat-Medium.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Medium.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -86,10 +86,138 @@
 
 /* WebFont: MontSerrat-Regular */
 @font-face {
-  font-family: 'MontSerrat-Regular';
-  src: url('../assets/fonts/MontSerrat-Regular.woff2') format('woff2'),
-    url('../assets/fonts/MontSerrat-Regular.woff') format('woff'),
-    url('../assets/fonts/MontSerrat-Regular.ttf') format('truetype');
+  font-family: "MontSerrat-Regular";
+  src: url("../assets/fonts/MontSerrat-Regular.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Regular.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Roboto-Bold */
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Bold.woff") format("woff"),
+    url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Roboto-Light */
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../assets/fonts/Roboto-Light.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Light.woff") format("woff"),
+    url("../assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Roboto-Medium */
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Medium.woff") format("woff"),
+    url("../assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Roboto-Regular */
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Roboto-ExtraBold */
+// @font-face {
+//     font-family: 'Roboto-ExtraBold';
+//     src: url("../assets/fonts/Roboto-Black.ttf") format("truetype");
+//     font-style: normal;
+//     font-weight: normal;
+//     text-rendering: optimizeLegibility;
+// }
+
+/* WebFont: MontSerrat-Bold */
+@font-face {
+  font-family: "MontSerrat-Bold";
+  src: url("../assets/fonts/MontSerrat-Bold.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Bold.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: MontSerrat-Regular */
+@font-face {
+  font-family: "MontSerrat-Regular";
+  src: url("../assets/fonts/MontSerrat-Regular.woff2") format("woff2"),
+    url("../assets/fonts/MontSerrat-Regular.woff") format("woff"),
+    url("../assets/fonts/MontSerrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Inter-Bold */
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../assets/fonts/Inter-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Inter-Regular */
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../assets/fonts/Inter-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Inter-Medium */
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../assets/fonts/Inter-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Inter-Light */
+@font-face {
+  font-family: "Inter-Light";
+  src: url("../assets/fonts/Inter-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* WebFont: Inter-SemiBold */
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("../assets/fonts/Inter-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+/* WebFont: Inter-Thin */
+@font-face {
+  font-family: "Inter-Thin";
+  src: url("../assets/fonts/Inter-Thin.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;

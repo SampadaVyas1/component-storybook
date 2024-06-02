@@ -1,0 +1,24 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.stepperContainer {
+  width: 100%;
+  @include displayFlex(row, space-between, center);
+  justify-content: space-between;
+  align-items: center;
+  column-gap: toRem(6);
+
+  .step {
+    @include displayFlex(row);
+    align-items: center;
+    width: -webkit-fill-available;
+    text-wrap: nowrap;
+    column-gap: toRem(6);
+
+    .stepSeperator {
+      height: 1px;
+      width: 100%;
+      background-color: $grey-1100;
+    }
+  }
+}

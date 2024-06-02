@@ -1,0 +1,5 @@
+export const STEP_STATUS = {
+  TODO: 'TODO',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+};

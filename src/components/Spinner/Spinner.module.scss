@@ -1,0 +1,33 @@
+@import 'src/styles/_variables.scss';
+@import 'src/styles/_mixins.scss';
+
+.loader {
+  display: inline-block;
+  width: toRem(50);
+  height: toRem(50);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: $white;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+
+  &.sizeS {
+    width: toRem(15);
+    height: toRem(15);
+  }
+  &.colorGrey {
+    border: 3px solid $light-gray9;
+    border-top-color: $light-gray10;
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

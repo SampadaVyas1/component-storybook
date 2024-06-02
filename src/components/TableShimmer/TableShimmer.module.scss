@@ -1,0 +1,12 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.tableContainer {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: toRem(12) toRem(16);
+    border-bottom: 1px solid $grey-shimmer;
+  }
+}

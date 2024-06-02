@@ -1,0 +1,41 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.step {
+  @include displayFlex(row);
+  align-items: center;
+  column-gap: toRem(8);
+
+  .stepNumber {
+    width: toRem(16);
+    height: toRem(16);
+    border: 1px solid $grey-500;
+    color: $grey-500;
+    border-radius: 50%;
+    padding: toRem(2);
+    font-size: toRem(12);
+    @include displayFlex(row, center, center);
+
+    &.completedSteps {
+      border-color: $blue;
+      background-color: $blue;
+      color: $white;
+    }
+
+    &.inProgressStep {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  .stepLabel {
+    color: $grey-500;
+    &.completedSteps {
+      color: $blue;
+    }
+
+    &.inProgressStep {
+      color: $black;
+    }
+  }
+}

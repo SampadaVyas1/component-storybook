@@ -1,0 +1,26 @@
+@import 'src/styles/mixins';
+@import 'src/styles/constants';
+
+.animatedBackground {
+  animation: placeHolderShimmer 2s linear infinite forwards;
+  background: linear-gradient(to right, $shimmer-white1 4%, $shimmer-white2 25%, $shimmer-white3 36%);
+  background-size: toRem(800) toRem(104);
+  position: relative;
+}
+
+.rounded {
+  border-radius: toRem(8);
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: toRem(-800) 0;
+  }
+  100% {
+    background-position: toRem(800) 0;
+  }
+}

@@ -1,0 +1,142 @@
+@import 'src/styles/_mixins.scss';
+@import 'src/styles/_constants.scss';
+
+.tableContainer {
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: nowrap;
+  height: 100%;
+  width: 100%;
+  background-color: $white;
+
+  .table {
+    width: 100%;
+    border-spacing: 0;
+    overflow-x: auto;
+    .tableHead {
+      z-index: 5;
+      background: $blue-25;
+      position: sticky;
+      top: 0;
+
+      .tableRow {
+        z-index: 1;
+        .th {
+          padding: toRem(12) toRem(16);
+          border-radius: 0px;
+          border: none;
+          z-index: 1;
+          text-align: start;
+          @include textStyling($roboto-medium, normal, 500, toRem(16), 150%, $black);
+          letter-spacing: toRem(0.08);
+          @media screen and (min-width: 1280px) and (max-width: 1440px) {
+            font-size: toRem(14);
+          }
+        }
+      }
+    }
+
+    .tableBody {
+      width: 100%;
+      overflow-x: auto;
+      background-color: $white;
+
+      .tableRow {
+        border-bottom: 1px solid $grey-100;
+        min-height: toRem(60);
+        transition-delay: 0.1s;
+        &:hover {
+          background-color: $blue-200;
+        }
+
+        &.highlightRow {
+          background-color: $blue-200;
+        }
+
+        &.emptyRow {
+          border-bottom: none;
+          height: 50vh;
+          &:hover {
+            background-color: $white;
+          }
+        }
+
+        .td {
+          padding: toRem(16);
+          text-align: left;
+        }
+      }
+
+      .noDataFound {
+        min-height: toRem(500);
+      }
+    }
+
+    .columnHeader {
+      color: $grey-700;
+      font-size: toRem(14);
+      display: flex;
+      align-items: center;
+      &.sortTable {
+        @include flexStyling(row, flex-start, center, toRem(8));
+      }
+      .columnWithSort {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .sortIcon {
+    @include flexStyling(column, null, null, toRem(2));
+    padding: toRem(5) toRem(8);
+    cursor: pointer;
+
+    .upIcon {
+      rotate: 180deg;
+    }
+  }
+}
+
+.pagination {
+  background: $white;
+  padding: toRem(8) toRem(16);
+  @include flexStyling(row, space-between, center, toRem(24));
+  width: 100%;
+  .totalCount {
+    width: 100%;
+    text-align: start;
+    color: $grey-1000;
+  }
+
+  .sizes {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+.tableContainer::-webkit-scrollbar {
+  width: toRem(0);
+  border-radius: toRem(2);
+  height: toRem(4);
+  display: block;
+}
+
+.tableContainer.showScroll::-webkit-scrollbar {
+  display: block;
+  width: toRem(6);
+  border-radius: toRem(2);
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: $grey-300;
+  display: block;
+}
+.tableContainer:hover {
+  .tableContainer::-webkit-scrollbar-thumb {
+    background-color: $grey-600;
+    scrollbar-width: thin;
+  }
+}
+.oddRow {
+  background-color: $grey-10;
+}

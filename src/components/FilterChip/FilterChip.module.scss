@@ -1,0 +1,105 @@
+@import 'src/styles/constants';
+@import 'src/styles/mixins';
+
+.filterChipWrapper {
+  @include displayFlex(row, flex-start, center, toRem(8));
+  overflow: hidden;
+  overflow-x: auto;
+
+  .tooltipWrapper {
+    @include displayFlex(column, flex-start, flex-start, null);
+
+    .showMore {
+      text-wrap: nowrap;
+      cursor: pointer;
+      width: fit-content;
+      padding: toRem(3) toRem(6);
+      border-radius: toRem(20);
+      box-sizing: border-box;
+    }
+    .chipTooltip {
+      display: none;
+    }
+    .showChipTooltip {
+      padding: toRem(8);
+      background-color: $white;
+      position: absolute;
+      top: toRem(48);
+      right: 0;
+      max-width: toRem(300);
+      z-index: 99;
+      @include displayFlex(row, flex-start, flex-start, toRem(8));
+    }
+  }
+  .filterChip {
+    height: toRem(26);
+    border-radius: toRem(16);
+    padding: toRem(2) toRem(8);
+    background-color: $grey-50;
+    text-wrap: nowrap;
+    max-width: toRem(125);
+    overflow: hidden;
+    @include displayFlex(row, flex-start, center, toRem(4));
+    letter-spacing: toRem(0.25);
+
+    .chipTooltip {
+      max-width: 80%;
+    }
+
+    .filter {
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $grey-1000;
+    }
+
+    .crossIcon {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+}
+.showMore {
+  background-color: $blue-grey-500;
+}
+
+.filterChipWrapperTooltip {
+  max-width: toRem(300);
+  @include displayFlex(row, flex-start, center, toRem(8));
+  flex-wrap: wrap;
+  word-break: break-all;
+  max-height: toRem(100);
+  overflow-y: auto;
+  @include customScrollbarStyles($grey-300);
+
+  &::-webkit-scrollbar {
+    display: block;
+  }
+
+  .filterChipTooltip {
+    border-radius: toRem(16);
+    padding: toRem(6) toRem(10);
+    background-color: $blue-grey-500;
+    text-wrap: nowrap;
+    max-width: max-content;
+    overflow: hidden;
+    @include displayFlex(row, flex-start, center, toRem(8));
+    letter-spacing: toRem(0.25);
+    box-sizing: border-box;
+
+    .filterEllipsis {
+      max-width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .crossIcon {
+      cursor: pointer;
+    }
+  }
+}
+.tooltipContainer {
+  position: relative;
+}
