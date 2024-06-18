@@ -1,8 +1,8 @@
-import { SVG_COLOR_GREY } from '../utils/svg/constant.ts';
-import { SVGProps } from './interfaces.ts';
-import React from 'react';
+import { SVG_COLOR_GREY } from "../utils/svg/constant.ts";
+// import { SVGProps } from './interfaces.ts';
+import React, { SVGProps } from "react";
 
-const KebabIcon: React.FC<SVGProps> = ({ color = SVG_COLOR_GREY, ...props }) => (
+const KebabIcon: React.FC<any> = ({ color = SVG_COLOR_GREY, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -12,7 +12,7 @@ const KebabIcon: React.FC<SVGProps> = ({ color = SVG_COLOR_GREY, ...props }) => 
     {...props}
   >
     <mask
-      style={{ maskType: 'alpha' }}
+      style={{ maskType: "alpha" }}
       maskUnits="userSpaceOnUse"
       x="0"
       y="0"
